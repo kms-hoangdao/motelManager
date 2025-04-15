@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
 import { COLORS, SIZES, SHADOWS } from '../../styles/theme';
 
 const Card = ({ children, style }) => {
@@ -8,6 +9,11 @@ const Card = ({ children, style }) => {
       {children}
     </View>
   );
+};
+
+Card.propTypes = {
+  children: PropTypes.node.isRequired,
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 
 const styles = StyleSheet.create({

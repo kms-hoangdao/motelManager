@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, ActivityIndicator } from 'react-native';
+import PropTypes from 'prop-types';
 import { COLORS, SIZES, FONTS } from '../../styles/theme';
 
 const Button = ({ 
@@ -49,6 +50,22 @@ const Button = ({
       )}
     </TouchableOpacity>
   );
+};
+
+Button.propTypes = {
+  title: PropTypes.string.isRequired,
+  onPress: PropTypes.func.isRequired,
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  variant: PropTypes.oneOf(['primary', 'secondary', 'outline']),
+  loading: PropTypes.bool,
+  disabled: PropTypes.bool,
+};
+
+Button.defaultProps = {
+  variant: 'primary',
+  loading: false,
+  disabled: false,
 };
 
 const styles = StyleSheet.create({

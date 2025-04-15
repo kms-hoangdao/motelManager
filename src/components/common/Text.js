@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text as RNText, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
 import { COLORS, FONTS, SIZES } from '../../styles/theme';
 
 const Text = ({ 
@@ -38,6 +39,18 @@ const Text = ({
       {children}
     </RNText>
   );
+};
+
+Text.propTypes = {
+  children: PropTypes.node.isRequired,
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  variant: PropTypes.oneOf(['h1', 'h2', 'h3', 'subtitle', 'body', 'caption']),
+  color: PropTypes.string,
+};
+
+Text.defaultProps = {
+  variant: 'body',
+  color: 'textPrimary',
 };
 
 const styles = StyleSheet.create({
