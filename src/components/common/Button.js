@@ -62,12 +62,6 @@ Button.propTypes = {
   disabled: PropTypes.bool,
 };
 
-Button.defaultProps = {
-  variant: 'primary',
-  loading: false,
-  disabled: false,
-};
-
 const styles = StyleSheet.create({
   button: {
     height: 48,

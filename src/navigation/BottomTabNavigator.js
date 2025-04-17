@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
-import RoomsScreen from '../screens/RoomsScreen';
+import RoomsStackNavigator from './RoomsStackNavigator';
 import TenantsScreen from '../screens/TenantsScreen';
 import BillsScreen from '../screens/BillsScreen';
 import PaymentsScreen from '../screens/PaymentsScreen';
@@ -43,7 +43,7 @@ const BottomTabNavigator = () => {
     >
       <Tab.Screen 
         name="Rooms" 
-        component={RoomsScreen} 
+        component={RoomsStackNavigator} 
         options={{ title: 'Phòng' }}
       />
       <Tab.Screen 

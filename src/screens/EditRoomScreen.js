@@ -8,7 +8,7 @@ import { Card, Text, Button, Input } from '../components/common';
 
 const EditRoomScreen = ({ route, navigation }) => {
   const { roomId } = route.params;
-  const { getRoomById, updateRoom } = useRooms();
+  const { getRoomById, editRoom } = useRooms();
   
   const [room, setRoom] = useState(null);
   const [roomNumber, setRoomNumber] = useState('');
@@ -34,6 +34,7 @@ const EditRoomScreen = ({ route, navigation }) => {
           );
         }
       } catch (error) {
+        console.error('Error loading room:', error);
         Alert.alert(
           'Lỗi',
           'Không thể tải thông tin phòng',
@@ -70,7 +71,7 @@ const EditRoomScreen = ({ route, navigation }) => {
     try {
       setLoading(true);
       
-      await updateRoom(roomId, {
+      await editRoom(roomId, {
         roomNumber: roomNumber.trim(),
         price: Number(price),
         description: description.trim(),

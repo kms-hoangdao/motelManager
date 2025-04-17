@@ -1,10 +1,14 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TextInput } from 'react-native';
 
 const TenantsScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Quản lý người thuê</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Tìm kiếm người thuê"
+      />
     </View>
   );
 };
@@ -19,6 +23,12 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 16,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 8,
+    padding: 12,
   },
 });
 

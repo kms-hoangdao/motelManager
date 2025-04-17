@@ -48,11 +48,6 @@ Text.propTypes = {
   color: PropTypes.string,
 };
 
-Text.defaultProps = {
-  variant: 'body',
-  color: 'textPrimary',
-};
-
 const styles = StyleSheet.create({
   h1: {
     ...FONTS.bold,
